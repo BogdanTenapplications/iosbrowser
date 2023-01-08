@@ -50,7 +50,7 @@ class ViewController: UIViewController {
               }
         let historyURL = HistoryURL(id: UUID().uuidString, url: url, created: Date())
         let request = URLRequest(url: url)
-        if pageIndex == historyUrls.count - 1 {
+        if pageIndex == tabURLs.count - 1 {
             let tabURL = TabURL(url: url, created: Date())
             tabURLs.append(tabURL)
             pageIndex += 1
@@ -108,6 +108,9 @@ extension ViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         emptyStateView.isHidden = true
+        if pageIndex == tabURLs.count - 1 {
+            var tab = tabURLs[pageIndex]
+        }
     }
     
 }

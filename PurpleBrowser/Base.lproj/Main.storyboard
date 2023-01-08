@@ -161,13 +161,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZ7-Vj-cGh">
-                                <rect key="frame" x="25" y="56.000000000000007" width="61" height="26.333333333333336"/>
+                                <rect key="frame" x="25" y="59.000000000000007" width="61" height="26.333333333333336"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BFY-JA-PH0">
-                                <rect key="frame" x="25" y="107.33333333333331" width="343" height="645.66666666666674"/>
+                                <rect key="frame" x="25" y="110.33333333333331" width="343" height="642.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -454,7 +454,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ODe-hk-nMD"/>
+        <segue reference="b8m-ct-YEK"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="left.arrow" width="24" height="32"/>

@@ -16,6 +16,7 @@
 		E10B872429688D82008F5289 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B872329688D82008F5289 /* AddNoteViewController.swift */; };
 		E10B872629688F04008F5289 /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B872529688F04008F5289 /* NoteModel.swift */; };
 		E10B8728296893D5008F5289 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B8727296893D5008F5289 /* NotesViewController.swift */; };
+		E119E75B296B5423006593CA /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E119E75A296B5423006593CA /* TabView.swift */; };
 		E149ADCD2966FA8600B8FD3F /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = E149ADCC2966FA8600B8FD3F /* Realm */; };
 		E149ADCF2966FA8600B8FD3F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E149ADCE2966FA8600B8FD3F /* RealmSwift */; };
 		E149ADD12966FAC400B8FD3F /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E149ADD02966FAC400B8FD3F /* HistoryModel.swift */; };
@@ -40,6 +41,7 @@
 		E10B872329688D82008F5289 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 		E10B872529688F04008F5289 /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
 		E10B8727296893D5008F5289 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		E119E75A296B5423006593CA /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		E149ADD02966FAC400B8FD3F /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
 		E149ADD22966FB9800B8FD3F /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		E149ADD42966FCCC00B8FD3F /* MenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuView.xib; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				E10B871B29682B77008F5289 /* TabsViewController.swift */,
 				E10B8721296831EA008F5289 /* BookmarkViewController.swift */,
 				E10B8727296893D5008F5289 /* NotesViewController.swift */,
+				E119E75A296B5423006593CA /* TabView.swift */,
 				E17A8BA42964A6A100706B4C /* Main.storyboard */,
 				E17A8BA72964A6AA00706B4C /* Assets.xcassets */,
 				E17A8BA92964A6AA00706B4C /* LaunchScreen.storyboard */,
@@ -207,6 +210,7 @@
 				E17A8B9F2964A6A100706B4C /* AppDelegate.swift in Sources */,
 				E17A8BA12964A6A100706B4C /* SceneDelegate.swift in Sources */,
 				E10B8719296820CE008F5289 /* HistoryViewController.swift in Sources */,
+				E119E75B296B5423006593CA /* TabView.swift in Sources */,
 				E10B872429688D82008F5289 /* AddNoteViewController.swift in Sources */,
 				E10B8728296893D5008F5289 /* NotesViewController.swift in Sources */,
 				E10B871C29682B77008F5289 /* TabsViewController.swift in Sources */,

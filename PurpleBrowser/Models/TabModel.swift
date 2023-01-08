@@ -10,4 +10,5 @@ import Foundation
 struct TabURL {
     let url: URL
     let created: Date
+    var tabView: TabView?
 }
