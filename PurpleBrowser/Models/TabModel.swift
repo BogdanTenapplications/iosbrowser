@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import WebKit
 
 struct TabURL {
     let url: URL
     let created: Date
-    var tabView: TabView?
+    var tabIndex: Int
+    var tabView: WKWebView
 }
