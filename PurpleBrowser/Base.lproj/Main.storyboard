@@ -29,6 +29,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="49.670000000000002" id="1HZ-Vg-HNC"/>
                                         </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system"/>
                                         <connections>
@@ -40,6 +41,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="47" id="L0W-Qx-dLm"/>
                                         </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="arrow.clockwise" catalog="system"/>
                                         <connections>
@@ -83,8 +85,9 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlM-zn-z0S">
                                                 <rect key="frame" x="132.33333333333334" y="0.0" width="62.333333333333343" height="60"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="square.fill.on.square.fill" catalog="system"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="menu"/>
                                                 <connections>
                                                     <action selector="menuButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="74O-4H-ucw"/>
                                                 </connections>
@@ -92,7 +95,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWl-Dv-Vxr">
                                                 <rect key="frame" x="198.66666666666666" y="0.0" width="61.999999999999972" height="60"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system" title=""/>
+                                                <buttonConfiguration key="configuration" style="plain" image="plus" title=""/>
                                                 <connections>
                                                     <action selector="addNewTabButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="klA-2k-tjd"/>
                                                 </connections>
@@ -100,13 +103,14 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9S-61-5BK">
                                                 <rect key="frame" x="264.66666666666669" y="0.0" width="62.333333333333314" height="60"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="pencil" catalog="system" title=""/>
+                                                <buttonConfiguration key="configuration" style="plain" image="note" title=""/>
                                                 <connections>
                                                     <action selector="addNoteButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bDv-2P-JdN"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQU-j3-fgZ">
                                                 <rect key="frame" x="331" y="0.0" width="62" height="60"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system"/>
                                                 <connections>
@@ -480,12 +484,12 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.clockwise" catalog="system" width="113" height="128"/>
-        <image name="left.arrow" width="24" height="32"/>
+        <image name="left.arrow" width="16" height="16"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
-        <image name="pencil" catalog="system" width="128" height="113"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
-        <image name="right.arrow" width="23" height="32"/>
-        <image name="square.fill.on.square.fill" catalog="system" width="128" height="116"/>
+        <image name="menu" width="16" height="16"/>
+        <image name="note" width="16" height="16"/>
+        <image name="plus" width="16" height="16"/>
+        <image name="right.arrow" width="16" height="16"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
