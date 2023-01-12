@@ -46,12 +46,24 @@ class ViewController: UIViewController {
     }
     
     @IBAction func loadWebPage(_ sender: Any) {
-        guard let urlText = urlTextField.text,
-              let url = URL(string: urlText) else {
-                  return
-              }
+        guard let urlText = urlTextField.text else {
+            return
+        }
+        guard let url = URL(string: urlText) else {
+            googleSearch(term: urlText)
+            return
+        }
         view.endEditing(true)
         loadWebPageInCurrentTab(url: url)
+    }
+    
+    func googleSearch(term: String) {
+        let escapedTerm = term.replacingOccurrences(of: " ", with: "+")
+        guard let searchURL = URL(string: "https://www.google.com/search?q=\(escapedTerm)") else {
+            return
+        }
+        view.endEditing(true)
+        loadWebPageInCurrentTab(url: searchURL)
     }
     
     func loadWebPageInCurrentTab(url: URL) {
@@ -59,8 +71,8 @@ class ViewController: UIViewController {
         let request = URLRequest(url: url)
         if pageIndex == tabURLs.count - 1 || tabURLs.count == 0 {
             let webView = WKWebView()
-            
             webView.navigationDelegate = self
+            currentWebView?.stopLoading()
             currentWebView = webView
             layout(webView: webView)
             let tabURL = TabURL(url: url, created: Date(), tabIndex: pageIndex, tabView: webView)
@@ -77,8 +89,45 @@ class ViewController: UIViewController {
         if tabURLs.indices.contains(lastIndex) {
             pageIndex = lastIndex
             currentWebView = tabURLs[lastIndex].tabView
+            urlTextField.text = tabURLs[lastIndex].url.absoluteString
             layout(webView: tabURLs[lastIndex].tabView)
         }
+    }
+    
+    @IBAction func refreshButtonTapped(_ sender: Any) {
+        if pageIndex != -1 {
+            if tabURLs.indices.contains(pageIndex) {
+                let currentTab = tabURLs[pageIndex]
+                let request = URLRequest(url: currentTab.url)
+                currentTab.tabView.load(request)
+            }
+        }
+    }
+    
+    @IBAction func addNewTabButtonTapped(_ sender: Any) {
+        emptyStateView.isHidden = false
+    }
+    
+    @IBAction func removeTabButtonTapped(_ sender: Any) {
+        let lastIndex = pageIndex - 1
+        if tabURLs.indices.contains(lastIndex) {
+            currentWebView = tabURLs[lastIndex].tabView
+            layout(webView: tabURLs[lastIndex].tabView)
+            tabURLs[pageIndex].tabView.removeFromSuperview()
+            tabURLs.removeLast()
+            pageIndex = pageIndex - 1
+            urlTextField.text = tabURLs[pageIndex].url.absoluteString
+        } else {
+            for tabURL in tabURLs {
+                tabURL.tabView.removeFromSuperview()
+            }
+            currentWebView?.removeFromSuperview()
+            tabURLs.removeAll()
+            emptyStateView.isHidden = false
+            pageIndex = 0
+            urlTextField.text = nil
+        }
+        
     }
     
     func layout(webView: WKWebView) {
@@ -97,6 +146,7 @@ class ViewController: UIViewController {
         if tabURLs.indices.contains(nextIndex) {
             pageIndex = nextIndex
             currentWebView = tabURLs[nextIndex].tabView
+            urlTextField.text = tabURLs[nextIndex].url.absoluteString
             layout(webView: tabURLs[nextIndex].tabView)
         }
     }
@@ -120,11 +170,14 @@ extension ViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-        guard let urlText = urlTextField.text,
-              let url = URL(string: urlText) else {
+        guard let urlText = textField.text else {
             textField.resignFirstResponder()
-                  return false
-              }
+            return false
+        }
+        guard let url = URL(string: urlText) else {
+            googleSearch(term: urlText)
+            return true
+        }
         textField.resignFirstResponder()
         loadWebPageInCurrentTab(url: url)
         return true

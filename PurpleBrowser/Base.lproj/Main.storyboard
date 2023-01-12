@@ -19,17 +19,31 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x2c-eg-ZkL">
                                 <rect key="frame" x="0.0" y="59" width="393" height="50"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A1c-cx-0Fk">
-                                        <rect key="frame" x="49.666666666666657" y="8" width="328.33333333333337" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="A1c-cx-0Fk">
+                                        <rect key="frame" x="49.666666666666657" y="8" width="296.33333333333337" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" textContentType="url"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SIT-er-tqQ">
                                         <rect key="frame" x="0.0" y="8" width="49.666666666666664" height="34.333333333333336"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="49.670000000000002" id="1HZ-Vg-HNC"/>
+                                        </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system"/>
                                         <connections>
                                             <action selector="loadWebPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l8e-PF-aNG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSP-xA-8bH">
+                                        <rect key="frame" x="346" y="8" width="47" height="34.333333333333336"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="47" id="L0W-Qx-dLm"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="arrow.clockwise" catalog="system"/>
+                                        <connections>
+                                            <action selector="refreshButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qQc-uN-ILv"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -37,10 +51,12 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="3j9-VQ-cKi"/>
                                     <constraint firstItem="SIT-er-tqQ" firstAttribute="leading" secondItem="x2c-eg-ZkL" secondAttribute="leading" id="5BN-L4-NPB"/>
+                                    <constraint firstItem="mSP-xA-8bH" firstAttribute="leading" secondItem="A1c-cx-0Fk" secondAttribute="trailing" id="OqF-Wt-ags"/>
+                                    <constraint firstItem="mSP-xA-8bH" firstAttribute="centerY" secondItem="A1c-cx-0Fk" secondAttribute="centerY" id="ZK3-OV-DUw"/>
                                     <constraint firstItem="A1c-cx-0Fk" firstAttribute="leading" secondItem="SIT-er-tqQ" secondAttribute="trailing" id="aWf-0M-QyD"/>
-                                    <constraint firstAttribute="trailing" secondItem="A1c-cx-0Fk" secondAttribute="trailing" constant="15" id="cUW-kj-8U6"/>
                                     <constraint firstItem="A1c-cx-0Fk" firstAttribute="centerY" secondItem="x2c-eg-ZkL" secondAttribute="centerY" id="dl0-K9-jt3"/>
                                     <constraint firstItem="SIT-er-tqQ" firstAttribute="centerY" secondItem="x2c-eg-ZkL" secondAttribute="centerY" id="w3B-zO-Reu"/>
+                                    <constraint firstAttribute="trailing" secondItem="mSP-xA-8bH" secondAttribute="trailing" id="yeX-kX-a3N"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="riJ-JC-irv">
@@ -77,6 +93,9 @@
                                                 <rect key="frame" x="198.66666666666666" y="0.0" width="61.999999999999972" height="60"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system" title=""/>
+                                                <connections>
+                                                    <action selector="addNewTabButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="klA-2k-tjd"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9S-61-5BK">
                                                 <rect key="frame" x="264.66666666666669" y="0.0" width="62.333333333333314" height="60"/>
@@ -90,6 +109,9 @@
                                                 <rect key="frame" x="331" y="0.0" width="62" height="60"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system"/>
+                                                <connections>
+                                                    <action selector="removeTabButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="guA-ti-Ku1"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -457,6 +479,7 @@
         <segue reference="b8m-ct-YEK"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="arrow.clockwise" catalog="system" width="113" height="128"/>
         <image name="left.arrow" width="24" height="32"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
